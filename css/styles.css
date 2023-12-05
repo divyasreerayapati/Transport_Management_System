@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("./../assets/Bc.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9; /* Adjust the opacity value (0 to 1) */
+}
+
+.main-head {
+  text-align: center;
+  padding-top: 50px;
+  height: 150px;
+  background-color: rgb(0, 174, 255, 0.4);
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+}
+
+.heading {
+  width: 550px;
+  padding-top: 15px;
+  height: 80px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 0 auto; /* Center the element horizontally */
+  border-radius: 5px;
+}
+
+.button {
+  padding: 10px 20px;
+  background-color: #00aeffe6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.sign-in .form-group,
+.sign-up .form-group {
+  width: 30vw;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #00aeffe6;
+  padding: 2rem;
+  border-radius: 24px 6px 24px;
+  background-color: #9ad8f6e6;
+  transition: all 0.5s;
+}
+
+.sign-up {
+  display: none;
+}
+
+.my-2 {
+  margin-top: 12px;
+}
+
+.form-label {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.form-input {
+  padding: 5px 5px;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  border-color: rgba(164, 204, 222, 0.43);
+}
+
+form a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+form a:hover {
+  text-decoration: underline;
+}
