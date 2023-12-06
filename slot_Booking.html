@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="assets/shortcut-car.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles-slot.css" />
+    <title>slot booking</title>
+  </head>
+  <body>
+    <nav class="container">
+      <div class="main-head">
+        <div class="heading">
+          <h1>Welcome to,Transport Management System</h1>
+        </div>
+      </div>
+      <div class="log-out">
+        <button class="log-out-butt">Logout</button>
+      </div>
+    </nav>
+
+    <article>
+      <div class="slot-selection">
+        <label for="slot" style="margin-right: 15px">Book your slot :</label>
+
+        <select name="slot" id="slot">
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="pickup">Pick-Up Slot</option>
+          <option value="drop">Drop Slot</option>
+        </select>
+      </div>
+
+      <div class="pickup">
+        <form class="form-group" action="#">
+          <h3>select your slot!</h3>
+          <label class="form-label my-2">name</label>
+          <input class="form-input my-2" type="text" />
+          <label class="form-labe my-2" style="margin-bottom: 15px">slot</label>
+          <select
+            name="slot"
+            id="slot"
+            style="margin-bottom: 50px; padding: 8px"
+          >
+            <option value="" selected disabled hidden>
+              Choose slot timing
+            </option>
+            <option value="shift1">shift 1 : 8 Am</option>
+            <option value="shift2">shift 2 : 8:20 Am</option>
+          </select>
+          <button class="button my-2" type="submit">Book slot</button>
+        </form>
+      </div>
+    </article>
+  </body>
+</html>
