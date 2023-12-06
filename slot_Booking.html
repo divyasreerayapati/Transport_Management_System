@@ -10,6 +10,13 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/styles-slot.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var dateInput = document.getElementById("dateInput");
+        dateInput.click();
+      });
+    </script>
+    <script src="scripts/script.js"></script>
     <title>slot booking</title>
   </head>
   <body>
@@ -24,7 +31,7 @@
       </div>
     </nav>
 
-    <article>
+    <!-- <article>
       <div class="slot-selection">
         <label for="slot" style="margin-right: 15px">Book your slot :</label>
 
@@ -57,6 +64,45 @@
           <button class="button my-2" type="submit">Book slot</button>
         </form>
       </div>
-    </article>
+    </article> -->
+
+    <div class="slot-selection">
+      <label for="slot" style="margin-right: 15px">Book your slot :</label>
+
+      <select onchange="pickUporDrop()" name="slot-booking" id="slot-booking">
+        <option value="" selected disabled hidden>Choose here</option>
+        <option value="pickup">Pick-Up Slot</option>
+        <option value="drop">Drop Slot</option>
+      </select>
+    </div>
+
+    <div class="date-slot" id="slots-book" name="slots-book">
+      <div class="date-picker">
+        <label for="slot" style="margin-right: 15px">Date :</label>
+        <input type="date" id="dateInput" />
+        <label for="slot" style="margin-left;: 15px">Slot:</label>
+      </div>
+      <div class="slot-book">
+        <div class="contain" id="pickup-slot">
+          <button class="slot">8 : 00 AM</button>
+          <button class="slot">8 : 30 AM</button>
+          <button class="slot">9 : 00 AM</button>
+          <button class="slot">9 : 30 AM</button>
+          <button class="slot">10 : 00 AM</button>
+          <button class="slot">10 : 30 AM</button>
+        </div>
+        <div class="contain" id="drop-slot">
+          <button class="slot">6 : 00 PM</button>
+          <button class="slot">6 : 30 PM</button>
+          <button class="slot">7 : 00 PM</button>
+          <button class="slot">7 : 30 PM</button>
+          <button class="slot">8 : 00 PM</button>
+          <button class="slot">8 : 30 PM</button>
+        </div>
+        <div>
+          <button class="bookking-btn">Book</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
