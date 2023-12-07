@@ -27,44 +27,12 @@
         </div>
       </div>
       <div class="log-out">
-        <button class="log-out-butt">Logout</button>
+        <a href="./Registration.html" target="_parent" class="log-out-butt"
+          >Logout</a
+        >
       </div>
     </nav>
 
-   
-      <div class="slot-selection">
-        <label for="slot" style="margin-right: 15px">Book your slot :</label>
-
-        <select name="slot" id="slot">
-          <option value="" selected disabled hidden>Choose here</option>
-          <option value="pickup">Pick-Up Slot</option>
-          <option value="drop">Drop Slot</option>
-        </select>
-      </div>
-
-      <div class="pickup">
-        <form class="form-group" action="#">
-          <h3>select your slot!</h3>
-          <label class="form-label my-2">name</label>
-          <input class="form-input my-2" type="text" />
-          <label class="form-labe my-2" style="margin-bottom: 8px">slot</label>
-          <input class="form-input my-2" type="date" />
-          <select
-            name="slot"
-            id="slot"
-            class="form-input my-2"
-            style="margin-bottom: 50px; padding: 8px"
-          >
-            <option value="" selected disabled hidden>
-              Choose slot timing
-            </option>
-            <option value="shift1">shift 1 : 8 Am</option>
-            <option value="shift2">shift 2 : 8:20 Am</option>
-          </select>
-          <button class="button my-2" type="submit">Book slot</button>
-        </form>
-      </div>
-    </article> -->
     <div class="slot-selection">
       <label for="slot" style="margin-right: 15px">Book your slot :</label>
 
@@ -78,7 +46,7 @@
     <div class="date-slot" id="slots-book" name="slots-book">
       <div class="date-picker">
         <h3>Choose Date</h3>
-        <input type="date" id="dateInput" onchange="handleDate()"/>
+        <input type="date" id="dateInput" onchange="handleDate()" />
       </div>
       <div class="slot-book">
         <h3>Please choose your slot!</h3>
