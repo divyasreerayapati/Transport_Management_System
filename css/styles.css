@@ -93,6 +93,13 @@ form a:hover {
 .container {
   position: relative;
 }
+
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  row-gap: 28px;
+}
+
 .log-out {
   position: absolute;
   right: 30px;
