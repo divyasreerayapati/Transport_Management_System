@@ -79,7 +79,7 @@
     <div class="date-slot" id="slots-book" name="slots-book">
       <div class="date-picker">
         <h3>Choose Date</h3>
-        <input type="date" id="dateInput" />
+        <input type="date" id="dateInput" onchange="handleDate()"/>
       </div>
       <div class="slot-book">
         <h3>Please choose your slot!</h3>
@@ -98,6 +98,10 @@
           <button class="slot">7 : 30 PM</button>
           <button class="slot">8 : 00 PM</button>
           <button class="slot">8 : 30 PM</button>
+        </div>
+        <div class="view-details">
+          <h5 id="date-selected">Date:</h5>
+          <h5 id="time-slot-selected">Time Slot:</h5>
         </div>
         <div>
           <button class="bookking-btn">Book</button>
