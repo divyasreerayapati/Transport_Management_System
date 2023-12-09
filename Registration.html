@@ -21,13 +21,32 @@
       </div>
     </nav>
     <div class="sign-in" id="sign-in-form">
-      <form class="form-group" action="#">
+      <form class="form-group" method="post" action="./php/login.php">
         <h3>Welcome, please enter your details!</h3>
         <label class="form-label my-2">Id</label>
-        <input class="form-input my-2" type="text" />
+        <input class="form-input my-2" name="id" type="text" />
         <label class="form-labe my-2">Password</label>
-        <input class="form-input my-2" type="password" />
-        <button class="button my-2" type="submit">Login</button>
+        <input class="form-input my-2" name="password" type="password" />
+
+        <label class="form-labe my-2">Organization Name</label>
+        <select class="form-input my-2" name="orgName" id="orgName">
+          <option value="" selected disabled hidden>Choose here</option>
+          <option value="cmp1">Power School India Pvt Ltd</option>
+          <option value="cmp2">Purpose pvt ltd</option>
+          <option value="cmp3">Rgukt rk valley</option>
+          <option value="cmp4">Amazon</option>
+          <option value="cmp5">Google</option>
+          <option value="cmp6">Accenture</option>
+          <option value="cmp7">IBM</option>
+          <option value="cmp8">Cognizant</option>
+          <option value="cmp9">TCS</option>
+          <option value="cmp10">Capgemini</option>
+          
+        
+        </select>
+        
+        
+        <input class="button my-2" value="Login" type="submit"></input>
         <p class="my-2">
           Don't have an account?
           <a href="#" onclick="showSignInForm()">Sign up</a>
