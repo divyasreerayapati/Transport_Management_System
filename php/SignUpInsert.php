@@ -15,8 +15,12 @@
         $stmt = $conn->prepare("INSERT INTO Employee (id, emialId,orgName,passwordEntered) VALUES (?, ?,?,?)");
         $stmt->bind_param("ssss", $id, $emialId,$orgName,$passwordEntered);
         $stmt->execute();
-        echo "<h1>Registration successfully done.</h1>";
+        // echo "<h1>Registration successfully done.</h1>";
         $stmt->close();
         $conn->close();
+        echo"<h1>Registration Successfull, Please Login</h1>";
+        header("refresh:2;url= ../Registration.html");
+        
+        exit();
     }
 ?>
