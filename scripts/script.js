@@ -1,3 +1,9 @@
+function showPasswordCheckbox() {
+  let passwordInput = document.getElementById("passwordInput");
+  const showPasswordCheckbox = document.getElementById("showPassword").checked;
+  passwordInput.type = showPasswordCheckbox ? "text" : "password";
+}
+
 function showSignInForm() {
   document.getElementById("sign-in-form").style.display = "none";
   document.getElementById("sign-up-form").style.display = "flex";

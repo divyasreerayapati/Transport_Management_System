@@ -11,6 +11,7 @@
     />
     <title>Transport Management System</title>
     <script src="scripts/script.js"></script>
+    <script src="scripts/form_validation.js"></script>
   </head>
   <body id="registration">
     <nav class="container">
@@ -21,16 +22,19 @@
       </div>
     </nav>
     <div class="sign-in" id="sign-in-form">
-      <form class="form-group" method="post" action="./php/login.php">
+      <form class="form-group" onsubmit="return LoginvalidateForm()" >
         <h3>Welcome, please enter your details!</h3>
         <label class="form-label my-2">Id</label>
-        <input class="form-input my-2" name="id" type="text" />
+        <input class="form-input my-2" name="id" id="empid" type="text" />
         <label class="form-labe my-2">Password</label>
-        <input class="form-input my-2" name="password" type="password" />
+        <input class="form-input my-2" name="password" type="password" id="passwordInput" />
+        <label for="showPassword" class="form-input my-2">
+          <input type="checkbox" id="showPassword" onchange="showPasswordCheckbox()"> Show Password
+      </label>
 
         <label class="form-labe my-2">Organization Name</label>
         <select class="form-input my-2" name="orgName" id="orgName">
-          <option value="" selected disabled hidden>Choose here</option>
+          <option value="" selected  hidden value="">Choose here</option>
           <option value="cmp1">Power School India Pvt Ltd</option>
           <option value="cmp2">Purpose pvt ltd</option>
           <option value="cmp3">Rgukt rk valley</option>
@@ -41,12 +45,10 @@
           <option value="cmp8">Cognizant</option>
           <option value="cmp9">TCS</option>
           <option value="cmp10">Capgemini</option>
-          
-        
         </select>
         
         
-        <input class="button my-2" value="Login" type="submit"></input>
+        <input class="button my-2" value="Login" type="submit" ></input>
         <p class="my-2">
           Don't have an account?
           <a href="#" onclick="showSignInForm()">Sign up</a>
@@ -54,16 +56,33 @@
       </form>
     </div>
     <div class="sign-up" id="sign-up-form">
-      <form class="form-group" action="#">
+      <form class="form-group" action="#" onsubmit="return signUpvalidateForm()" method="post" action="php/SignUpInsert.php">
         <h3>Hello, Please create your account</h3>
         <label class="form-label my-2">Employee Id</label>
-        <input class="form-input my-2" type="text" />
+        <input class="form-input my-2" id="empidregister" name = "empidregister" type="text" />
         <label class="form-label my-2">Email</label>
-        <input type="email" class="form-input my-2" />
-        <label class="form-label my-2">Department</label>
-        <input class="form-input my-2" type="text" />
+        <input type="email" class="form-input my-2"id="emailregister"name="emailregister" />
+        <label class="form-labe my-2">Organization Name</label>
+        <select class="form-input my-2" name="orgNameregister" id="orgNameregister">
+          <option value="" selected  hidden value="">Choose here</option>
+          
+          <option value="cmp1">Power School India Pvt Ltd</option>
+          <option value="cmp2">Purpose pvt ltd</option>
+          <option value="cmp3">Rgukt rk valley</option>
+          <option value="cmp4">Amazon</option>
+          <option value="cmp5">Google</option>
+          <option value="cmp6">Accenture</option>
+          <option value="cmp7">IBM</option>
+          <option value="cmp8">Cognizant</option>
+          <option value="cmp9">TCS</option>
+          <option value="cmp10">Capgemini</option>
+        </select>
         <label class="form-labe my-2">Password</label>
-        <input class="form-input my-2" type="password" />
+        <input class="form-input my-2" type="password" id="passwordtype1" name="passwordtype1" />
+
+        <label class="form-labe my-2">re-type password</label>
+        <input class="form-input my-2" type="password" id="passwordtype2"/>
+
         <button class="button my-2" type="submit">Register</button>
         <p class="my-2">
           Already had an account?

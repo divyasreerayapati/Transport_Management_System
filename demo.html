@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .formpage {
+        display: flex;
+        width: 3vw;
+        margin: 30px auto;
+      }
+    </style>
+    <script>
+      function validateForm() {
+        let id = document.getElementById("empid").value;
+        let fullname = document.getElementById("fullname").value;
+
+        if (id == "" || fullname == "") {
+          alert("All fileds are mandatory");
+          document.getElementById("fullname");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="formpage">
+      <form class="forms" onsubmit="return validateForm()">
+        <label>Id</label>
+        <input
+          type="text"
+          class="id"
+          id="empid"
+          placeholder="Enter your id : "
+        />
+        <label>Fullname</label>
+        <input
+          type="text"
+          class="fullname"
+          id="fullname"
+          placeholder="Enter your name "
+        />
+        <input type="submit" class="submitbutton" />
+      </form>
+    </div>
+  </body>
+</html>

@@ -73,12 +73,11 @@
   display: none;
 }
 
-.view-details{
+.view-details {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
   text-align: start;
   margin-left: 2rem;
   margin-bottom: 0.5rem;
-  
 }
