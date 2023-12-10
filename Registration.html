@@ -22,7 +22,7 @@
       </div>
     </nav>
     <div class="sign-in" id="sign-in-form">
-      <form class="form-group" onsubmit="return LoginvalidateForm()" >
+      <form class="form-group" onsubmit="return LoginvalidateForm()" method="post" action="php/loginCheck.php" >
         <h3>Welcome, please enter your details!</h3>
         <label class="form-label my-2">Id</label>
         <input class="form-input my-2" name="id" id="empid" type="text" />
@@ -56,7 +56,7 @@
       </form>
     </div>
     <div class="sign-up" id="sign-up-form">
-      <form class="form-group" action="#" onsubmit="return signUpvalidateForm()" method="post" action="php/SignUpInsert.php">
+      <form class="form-group"  onsubmit="return signUpvalidateForm()" method="post" action="php/SignUpInsert.php">
         <h3>Hello, Please create your account</h3>
         <label class="form-label my-2">Employee Id</label>
         <input class="form-input my-2" id="empidregister" name = "empidregister" type="text" />

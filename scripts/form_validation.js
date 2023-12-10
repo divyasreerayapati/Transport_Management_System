@@ -54,6 +54,7 @@ function signUpvalidateForm() {
     return false;
   }
 
+  console.log("validation done");
   return true;
 }
 
@@ -69,7 +70,7 @@ function LoginvalidateForm() {
 
   var regex = /^[a-zA-Z0-9]+$/;
 
-  if (!regex.test(id) || id.length < 6 || id.length > 10 || isNaN(id)) {
+  if (!regex.test(id) || id.length < 6 || id.length > 10) {
     alert(
       "Employee ID must be a combination of letters and numbers and value of length 6 to 10"
     );

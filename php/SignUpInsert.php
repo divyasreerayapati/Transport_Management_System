@@ -6,7 +6,7 @@
     $passwordEntered = $_POST['passwordtype1'];
     // Database Connection
 
-    $conn = new mysqli('localhost', 'root', 'divyasree', 'TransportData ');
+    $conn = new mysqli('localhost', 'root', '', 'TransportData');
     if ($conn->connect_error) {
         echo "<h1>Connection error</h1>"; 
         die('Connection Failed : ' . $conn->connect_error);
