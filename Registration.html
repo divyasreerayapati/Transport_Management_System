@@ -17,7 +17,7 @@
   <body id="registration">
     <video autoplay loop muted plays-inline class="back-video" id="myVideo">
       <source src="./assets/bg.mp4" type="video/mp4" />
-    </video>
+    </video> 
     <nav class="container-nav">
       <div class="main-head">
         <div class="heading">
@@ -26,9 +26,18 @@
       </div>
     </nav>
     <div class="sign-in" id="sign-in-form">
-      <form class="form-group" onsubmit="return LoginvalidateForm()" method="post" action="php/loginCheck.php" >
+     
+      <form class="form-group" id="employeeLogin" onsubmit="return LoginvalidateForm()" method="post" action="php/loginCheck.php" >
+        <div class="type-selection">
+          <div class="employee-type" id="employee" onclick="showEmployee()">
+         Employee
+          </div>
+          <div class="employee-type" id="admin" onclick= "showAdmin()">
+            Admin
+          </div>
+        </div>
         <h3>Welcome, please enter your details!</h3>
-        <label class="form-label my-2">Id</label>
+        <label class="form-label my-2">Employee Id</label>
         <input class="form-input my-2" name="id" id="empid" type="text" />
         <label class="form-label my-2">Password</label>
         <input class="form-input my-2" name="password" type="password" id="passwordInput" />
@@ -36,8 +45,6 @@
           <input type="checkbox" class="form-input" id="showPassword" onchange="showPasswordCheckbox()"> 
           <label for="showPassword" class="form-label my-2">Show Password</label>
         </div>
-      
-
         <label class="form-label my-2">Organization Name</label>
         <select class="form-input my-2" name="orgName" id="orgName">
           <option value="" selected  hidden value="">Choose here</option>
@@ -52,8 +59,6 @@
           <option value="cmp9">TCS</option>
           <option value="cmp10">Capgemini</option>
         </select>
-        
-        
         <input class="button my-2" value="Login" type="submit" ></input>
         <p class="my-2">
           Don't have an account?
@@ -61,6 +66,28 @@
         </p>
       </form>
 
+      <form class="form-group" id="adminLogin"  onsubmit="return  AdminvalidateForm()" method="post" action="php/adminCheck.php" >
+        <div class="type-selection">
+          <div class="employee-type" id="employee1" onclick="showEmployee()">
+         Employee
+          </div>
+          <div class="employee-type" id="admin1" onclick= "showAdmin()">
+            Admin
+          </div>
+        </div>
+        <h3>Welcome, please enter your details!</h3>
+        <label class="form-label my-2">Admin Id</label>
+        <input class="form-input my-2" name="id" id="adminid" type="text" />
+        <label class="form-label my-2">Password</label>
+        <input class="form-input my-2" name="password" type="password" id="passwordInput" />
+        <div class="form-check">
+          <input type="checkbox" class="form-input" id="showPassword" onchange="showPasswordCheckbox()"> 
+          <label for="showPassword" class="form-label my-2">Show Password</label>
+        </div>
+       
+        <input class="button my-2" value="Login" type="submit" ></input>
+       
+      </form>
       
     </div>
     <div class="sign-up" id="sign-up-form">
@@ -88,11 +115,11 @@
           <option value="cmp10">Capgemini</option>
         </select>
         <label class="form-label my-2">Address</label>
-        <textarea rows="3" type="text" class="form-input my-2"id="address"name="address"placeholder="Enter your Address"></textarea> 
+        <textarea rows="3" type="text" class="form-input my-2"id="address" name="address" placeholder="Enter your Address"></textarea> 
         <label class="form-labe my-2">Password</label>
         <input class="form-input my-2" type="password" id="passwordtype1" name="passwordtype1" placeholder="Enter your Password" />
 
-        <label class="form-labe my-2">Conform password</label>
+        <label class="form-labe my-2">Confirm password</label>
         <input class="form-input my-2" type="password" id="passwordtype2" placeholder="Renter your Password"/>
 
         <button class="button my-2" type="submit">Register</button>

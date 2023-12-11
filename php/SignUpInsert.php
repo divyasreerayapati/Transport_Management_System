@@ -1,8 +1,10 @@
 <?php
 
-    $id = $_POST['empidregister'];
-    $emialId = $_POST['emailregister'];
+    $employeeId = $_POST['empidregister'];
+    $employeeName = $_POST['employeename'];
+    $emailId = $_POST['emailregister'];
     $orgName = $_POST['orgNameregister'];
+    $empaddress = $_POST['address'];
     $passwordEntered = $_POST['passwordtype1'];
     // Database Connection
 
@@ -12,8 +14,8 @@
         die('Connection Failed : ' . $conn->connect_error);
     } else {
         echo "<h1>Successful</h1>"; 
-        $stmt = $conn->prepare("INSERT INTO Employee (id, emialId,orgName,passwordEntered) VALUES (?, ?,?,?)");
-        $stmt->bind_param("ssss", $id, $emialId,$orgName,$passwordEntered);
+        $stmt = $conn->prepare("INSERT INTO Employee (employeeId,employeeName, emialId,orgName,empaddress,passwordEntered) VALUES (?,?,?,?,?,?)");
+        $stmt->bind_param("ssssss", $employeeId,$employeeName, $emailId,$orgName,$empaddress,$passwordEntered);
         $stmt->execute();
         // echo "<h1>Registration successfully done.</h1>";
         $stmt->close();

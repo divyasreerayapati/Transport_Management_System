@@ -98,3 +98,33 @@ function LoginvalidateForm() {
 
   return true;
 }
+
+function AdminvalidateForm() {
+  let id = document.getElementById("adminid").value;
+  let password = document.getElementById("passwordInput").value;
+
+  if (id === "" || password === "") {
+    alert("All fields are mandatory");
+    return false;
+  }
+  var uppercaseRegex = /[A-Z]/;
+  var lowercaseRegex = /[a-z]/;
+  var specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/;
+
+  if (
+    uppercaseRegex.test(password) &&
+    lowercaseRegex.test(password) &&
+    specialCharacterRegex.test(password)
+  ) {
+  } else {
+    alert(
+      "Password must contain at least one uppercase letter, one lowercase letter, and one special character."
+    );
+  }
+  if (password.length < 6 && password.length > 20) {
+    alert("Password should be of length 6 to 20 charcaters");
+    return false;
+  }
+
+  return true;
+}
