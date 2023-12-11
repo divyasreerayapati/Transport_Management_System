@@ -12,8 +12,12 @@
     <title>Transport Management System</title>
     <script src="scripts/script.js"></script>
     <script src="scripts/form_validation.js"></script>
+    
   </head>
   <body id="registration">
+    <video autoplay loop muted plays-inline class="back-video" id="myVideo">
+      <source src="./assets/bg.mp4" type="video/mp4" />
+    </video>
     <nav class="container">
       <div class="main-head">
         <div class="heading">
@@ -26,13 +30,13 @@
         <h3>Welcome, please enter your details!</h3>
         <label class="form-label my-2">Id</label>
         <input class="form-input my-2" name="id" id="empid" type="text" />
-        <label class="form-labe my-2">Password</label>
+        <label class="form-label my-2">Password</label>
         <input class="form-input my-2" name="password" type="password" id="passwordInput" />
         <label for="showPassword" class="form-input my-2">
-          <input type="checkbox" id="showPassword" onchange="showPasswordCheckbox()"> Show Password
+          <input type="checkbox" id="showPassword" onchange="showPasswordCheckbox()"> <span class="form-label">Show Password</span>
       </label>
 
-        <label class="form-labe my-2">Organization Name</label>
+        <label class="form-label my-2">Organization Name</label>
         <select class="form-input my-2" name="orgName" id="orgName">
           <option value="" selected  hidden value="">Choose here</option>
           <option value="cmp1">Power School India Pvt Ltd</option>
@@ -54,6 +58,8 @@
           <a href="#" onclick="showSignInForm()">Sign up</a>
         </p>
       </form>
+
+      
     </div>
     <div class="sign-up" id="sign-up-form">
       <form class="form-group"  onsubmit="return signUpvalidateForm()" method="post" action="php/SignUpInsert.php">

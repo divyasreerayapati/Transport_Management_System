@@ -4,27 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <style>
       .formpage {
         display: flex;
         width: 3vw;
         margin: 30px auto;
       }
-    </style>
-    <script>
-      function validateForm() {
-        let id = document.getElementById("empid").value;
-        let fullname = document.getElementById("fullname").value;
-
-        if (id == "" || fullname == "") {
-          alert("All fileds are mandatory");
-          document.getElementById("fullname");
-        }
+      #myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
       }
-    </script>
+    </style>
   </head>
   <body>
     <div class="formpage">
+      <div class="videoContainer">
+        <video autoplay loop muted plays-inline class="back-video" id="myVideo">
+          <source src="bg.mp4" type="video/mp4" />
+        </video>
+      </div>
       <form class="forms" onsubmit="return validateForm()">
         <label>Id</label>
         <input

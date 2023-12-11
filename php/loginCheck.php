@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<h1>Login Successful</h1>";
             $_SESSION['employee_id'] = $id;
             $employee_id = $_SESSION['employee_id'];
-            header("refresh:10;url= ../slot_Booking.html");
+            header("refresh:2;url= ../slot_Booking.html");
         
             // Perform additional actions if needed (e.g., session management, redirect)
         } else {

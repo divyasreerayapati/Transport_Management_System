@@ -10,12 +10,6 @@
     />
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="css/styles-slot.css" />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var dateInput = document.getElementById("dateInput");
-        dateInput.click();
-      });
-    </script>
     <script src="scripts/script.js"></script>
     <title>slot booking</title>
   </head>
@@ -26,10 +20,10 @@
           <h1>Welcome to,Transport Management System</h1>
         </div>
       </div>
-      <div class="log-out">
+      <div class="log-out" title="Logout">
         <a href="./Registration.html" target="_parent" class="log-out-butt"
-          >Logout</a
-        >
+          ><img class="img-logout" src="./assets/logout.svg" alt=""
+        /></a>
       </div>
     </nav>
 
@@ -46,7 +40,12 @@
     <div class="date-slot" id="slots-book" name="slots-book">
       <div class="date-picker">
         <h3>Choose Date</h3>
-        <input type="date" id="dateInput" onchange="handleDate()" />
+        <input
+          type="date"
+          class="form-input"
+          id="dateInput"
+          onchange="handleDate()"
+        />
       </div>
       <div class="slot-book">
         <h3>Please choose your slot!</h3>
