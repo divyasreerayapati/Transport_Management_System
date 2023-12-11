@@ -8,6 +8,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to the login page (adjust the URL as needed)
-header("Location: ../Registration.html");
+header("Location: ../Registration.php");
 exit();
 ?>

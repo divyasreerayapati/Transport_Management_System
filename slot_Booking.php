@@ -15,9 +15,26 @@
   </head>
   <body>
     <nav class="container">
-      <div class="main-head">
+      <div style="height:100px" class="main-head">
         <div class="heading">
-          <h1>Welcome to,Transport Management System</h1>
+          <h3>Transport Management System</h3>
+          <?php
+session_start();
+
+// Check if user is logged in
+if (isset($_SESSION['employeeId'])) {
+    // Access user details from the session
+    $userDetails = $_SESSION['userDetails'];
+
+    // Display user details
+    echo "<p>Hi👋, " . $userDetails['employeeName'] . "!</p>";
+} else {
+    // Redirect to the login page if not logged in
+    header("Location: ../Registration.html");
+    exit();
+}
+?>
+
         </div>
       </div>
 
@@ -67,12 +84,27 @@
           <button class="slot">8 : 30 PM</button>
         </div>
         <div class="view-details">
-          <h5 id="date-selected">Date:</h5>
-          <h5 id="time-slot-selected">Time Slot:</h5>
+          <form class="form-group>
+            <table>
+              <tr>
+                <td> <label for="dateSelected">Date:</label></td>
+                <td> <input type="text" disabled="true" id="date-selected" value="" name="dateSelected"></td>
+              </tr>
+              <tr>
+              <td> <label for="timeSelected">Slot:</label></td>
+                <td>  <input type="text" disabled="true" id="time-slot-selected" value="" name="timeSelected"></td>
+</tr>
+
+</table>
+           
+            <div>
+          <button type="submit" class="bookking-btn">Book</button>
         </div>
-        <div>
-          <button class="bookking-btn">Book</button>
+</form>
+          <!-- <h5 id="date-selected">Date:</h5>
+          <h5 id="time-slot-selected">Time Slot:</h5> -->
         </div>
+        
       </div>
     </div>
   </body>

@@ -76,13 +76,19 @@
   display: none;
 }
 
-.view-details {
+.view-details .form-group {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  column-gap: 1rem;
   text-align: start;
   margin-left: 2rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.view-details form input {
+  outline: none;
+  border: none;
 }
 
 select {

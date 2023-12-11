@@ -22,9 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Check if a matching record is found
         if ($result->num_rows > 0) {
-            echo "<h1>Login Successful</h1>";
-            $_SESSION['employeeId'] = $employeeId;
-            header("refresh:2;url= ../slot_Booking.html");
+            echo "<h1>Login Successful redirecting to Slot booking</h1>";
+    $userDetails = $result->fetch_assoc();
+    $_SESSION['employeeId'] = $employeeId;
+    $_SESSION['userDetails'] = $userDetails; // Store user details in the session
+            header("refresh:0;url= ../slot_Booking.php");
             // Perform additional actions if needed (e.g., session management, redirect)
         } else {
             echo "<h1>Login Failed. Invalid credentials</h1>";

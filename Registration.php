@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// Check if user is logged in
+if (isset($_SESSION['employeeId'])) {
+  header("Location: ./slot_Booking.php");
+exit();
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
