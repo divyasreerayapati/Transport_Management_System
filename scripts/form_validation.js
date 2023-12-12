@@ -4,7 +4,6 @@ function signUpvalidateForm() {
   let orgName = document.getElementById("orgNameregister").value;
   let password1 = document.getElementById("passwordtype1").value;
   let password2 = document.getElementById("passwordtype2").value;
-
   if (
     id === "" ||
     email === "" ||
@@ -62,7 +61,7 @@ function LoginvalidateForm() {
   let id = document.getElementById("empid").value;
   let password = document.getElementById("passwordInput").value;
   let orgName = document.getElementById("orgName").value;
-
+  console.log("Inside the employee login validation");
   if (id === "" || password === "" || orgName === "") {
     alert("All fields are mandatory");
     return false;
@@ -91,7 +90,7 @@ function LoginvalidateForm() {
       "Password must contain at least one uppercase letter, one lowercase letter, and one special character."
     );
   }
-  if (password.length < 6 && password.length > 20) {
+  if (password.length < 6 || password.length > 20) {
     alert("Password should be of length 6 to 20 charcaters");
     return false;
   }
@@ -101,8 +100,8 @@ function LoginvalidateForm() {
 
 function AdminvalidateForm() {
   let id = document.getElementById("adminid").value;
-  let password = document.getElementById("passwordInput").value;
-
+  let password = document.getElementById("passwordInputAdmin").value;
+  console.log(id, password);
   if (id === "" || password === "") {
     alert("All fields are mandatory");
     return false;
@@ -121,7 +120,7 @@ function AdminvalidateForm() {
       "Password must contain at least one uppercase letter, one lowercase letter, and one special character."
     );
   }
-  if (password.length < 6 && password.length > 20) {
+  if (password.length < 6 || password.length > 20) {
     alert("Password should be of length 6 to 20 charcaters");
     return false;
   }

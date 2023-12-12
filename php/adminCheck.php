@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Perform additional actions if needed (e.g., session management, redirect)
         } else {
             echo "<h1>Login Failed. Invalid credentials</h1>";
-            header("refresh:1;url= ../Registration.html");
+            header("refresh:1;url= ../Registration.php");
         }
 
         $stmt->close();

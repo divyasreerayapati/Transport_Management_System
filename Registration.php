@@ -76,7 +76,7 @@ exit();
         </p>
       </form>
 
-      <form class="form-group" id="adminLogin"  onsubmit="return  AdminvalidateForm()" method="post" action="php/adminCheck.php" >
+      <form class="form-group" id="adminLogin"  onsubmit="return AdminvalidateForm()" method="post" action="php/adminCheck.php" >
         <div class="type-selection">
           <div class="employee-type" id="employee1" onclick="showEmployee()">
          Employee
@@ -89,7 +89,7 @@ exit();
         <label class="form-label my-2">Admin Id</label>
         <input class="form-input my-2" name="id" id="adminid" type="text" />
         <label class="form-label my-2">Password</label>
-        <input class="form-input my-2" name="password" type="password" id="passwordInput" />
+        <input class="form-input my-2" name="password" type="password" id="passwordInputAdmin" />
         <div class="form-check">
           <input type="checkbox" class="form-input" id="showPassword" onchange="showPasswordCheckbox()"> 
           <label for="showPassword" class="form-label my-2">Show Password</label>
