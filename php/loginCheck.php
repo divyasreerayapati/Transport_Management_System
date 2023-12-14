@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<h1>Login Successful redirecting to Slot booking</h1>";
     $userDetails = $result->fetch_assoc();
     $_SESSION['employeeId'] = $employeeId;
+    $_SESSION['userDetails'] = $userDetails;
     $_SESSION['userDetails'] = $userDetails; // Store user details in the session
             header("refresh:0;url= ../slot_Booking.php");
             // Perform additional actions if needed (e.g., session management, redirect)

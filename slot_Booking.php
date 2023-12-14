@@ -10,10 +10,10 @@
     <script src="scripts/slot_script.js"></script>
     <style>
        table {
-        border-spacing: 10px; /* Add spacing between cells */
+        border-spacing: 3px; /* Add spacing between cells */
         }
       td {
-        padding: 5px; /* Add padding inside cells */
+        padding: 3px; /* Add padding inside cells */
         }
        input[disabled] {
         outline: none; 
@@ -71,21 +71,21 @@
       <div class="slot-book">
         <h3>Please choose your slot!</h3>
         <div class="contain" id="pickup-slot">
-          <button class="slot" onclick="handleSlotClick(this)">8 : 00 AM</button>
-          <button class="slot" onclick="handleSlotClick(this)">8 : 30 AM</button>
-          <button class="slot" onclick="handleSlotClick(this)">9 : 00 AM</button>
-          <button class="slot" onclick="handleSlotClick(this)">9 : 30 AM</button>
-          <button class="slot" onclick="handleSlotClick(this)">10 : 00 AM</button>
-          <button class="slot" onclick="handleSlotClick(this)">10 : 30 AM</button>
+          <button class="slot" >8 : 00 AM</button>
+          <button class="slot" >8 : 30 AM</button>
+          <button class="slot" >9 : 00 AM</button>
+          <button class="slot" >9 : 30 AM</button>
+          <button class="slot" >10 : 00 AM</button>
+          <button class="slot" >10 : 30 AM</button>
         </div>
 
         <div class="contain" id="drop-slot">
-          <button class="slot" onclick="handleSlotClick(this)">6 : 00 PM</button>
-          <button class="slot" onclick="handleSlotClick(this)">6 : 30 PM</button>
-          <button class="slot" onclick="handleSlotClick(this)">7 : 00 PM</button>
-          <button class="slot" onclick="handleSlotClick(this)">7 : 30 PM</button>
-          <button class="slot" onclick="handleSlotClick(this)">8 : 00 PM</button>
-          <button class="slot" onclick="handleSlotClick(this)">8 : 30 PM</button>
+          <button class="slot" >6 : 00 PM</button>
+          <button class="slot" >6 : 30 PM</button>
+          <button class="slot" >7 : 00 PM</button>
+          <button class="slot" >7 : 30 PM</button>
+          <button class="slot" >8 : 00 PM</button>
+          <button class="slot" >8 : 30 PM</button>
         </div>
 
         <div class="view-details">

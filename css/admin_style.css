@@ -34,3 +34,7 @@
 .done-button:hover {
   background-color: #45a049;
 }
+h2 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
