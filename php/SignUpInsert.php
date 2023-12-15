@@ -21,7 +21,7 @@
         $stmt->close();
         $conn->close();
         echo"<h1>Registration Successfull, Please Login</h1>";
-        header("refresh:2;url= ../Registration.html");
+        header("refresh:2;url= ../Registration.php");
         
         exit();
     }
