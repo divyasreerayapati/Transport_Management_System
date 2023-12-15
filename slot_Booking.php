@@ -94,11 +94,11 @@
             <table class="tableData" >
               <tr>
                 <td> <label for="dateSelected">Date:</label></td>
-                <td> <input type="text" disabled="true" id="date-selected" value="" name="dateSelected"></td>
+                <td> <input type="text" onchange="handleInputChange()"  id="date-selected" value="" name="dateSelected"></td>
               </tr>
               <tr>
                 <td> <label for="timeSelected">Slot:</label></td>
-                <td><input type="text" disabled="true" id="time-slot-selected" value="" name="timeSelected"></td>
+                <td><input type="text" onchange="handleInputChange()" id="time-slot-selected" value="" name="timeSelected"></td>
               </tr>
             </table>
 

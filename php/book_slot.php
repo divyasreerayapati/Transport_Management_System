@@ -1,4 +1,6 @@
 <?php
+var_dump($_POST);
+
 session_start();
 
 // Check if the user is logged in
