@@ -121,3 +121,26 @@ select {
   width: 36px;
   color: #fff;
 }
+
+.slot-container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.side-nav {
+  background-color: #d6d6d6;
+  min-height: 85vh;
+}
+
+.slot-body {
+  width: 90%;
+}
+
+.side-nav ul {
+  text-align: center;
+  line-height: 3rem;
+}
+
+.side-nav ul li {
+  border-bottom: 2px solid aliceblue;
+}

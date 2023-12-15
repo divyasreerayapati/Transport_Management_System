@@ -54,6 +54,16 @@
       </div>
     </nav>
 
+    <div class="slot-container">
+        <div class="side-nav">
+              <ul>
+                <li>Bookings</li>
+                <li>Book</li>
+              </ul>
+        </div>  
+    <div class="slot-body">
+      
+
     <div class="slot-selection">
       <label for="slot" style="margin-right: 15px">Book your slot :</label>
 
@@ -109,5 +119,7 @@
         </div>
       </div>
     </div>
+          </div>
+          </div>
   </body>
 </html>
