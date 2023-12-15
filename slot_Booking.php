@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles-slot.css" />
     <script src="scripts/script.js"></script>
     <script src="scripts/slot_script.js"></script>
+
     <style>
        table {
         border-spacing: 3px; /* Add spacing between cells */
@@ -39,7 +40,7 @@
               echo "<p>Hi👋, " . $userDetails['employeeName'] . "!</p>";
             } else {
               // Redirect to the login page if not logged in
-              header("Location: ../Registration.html");
+              header("Location: ../Registration.php");
               exit();
             }
           ?>
@@ -47,7 +48,7 @@
       </div>
 
       <div class="log-out" title="Logout">
-        <a href="php/logout.php" target="_parent" class="log-out-butt">
+        <a href="./php/logout.php" target="_parent" class="log-out-butt">
           <img class="img-logout" src="./assets/logout.svg" alt="" />
         </a>
       </div>
@@ -89,7 +90,7 @@
         </div>
 
         <div class="view-details">
-          <form class="form-group">
+          <form class="form-group" action="php/book_slot.php" method="post">
             <table class="tableData" >
               <tr>
                 <td> <label for="dateSelected">Date:</label></td>
@@ -97,7 +98,7 @@
               </tr>
               <tr>
                 <td> <label for="timeSelected">Slot:</label></td>
-                <td>  <input type="text" disabled="true" id="time-slot-selected" value="" name="timeSelected"></td>
+                <td><input type="text" disabled="true" id="time-slot-selected" value="" name="timeSelected"></td>
               </tr>
             </table>
 

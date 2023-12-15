@@ -23,6 +23,7 @@ exit();
     <script src="scripts/script.js"></script>
     <script src="scripts/form_validation.js"></script>
     
+    
   </head>
   <body id="registration">
     <video autoplay loop muted plays-inline class="back-video" id="myVideo">
