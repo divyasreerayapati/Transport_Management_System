@@ -84,15 +84,15 @@
     <div class="slot-container">
         <div class="side-nav">
               <ul>
-                <li>Bookings</li>
-                <li>Book</li>
+                <li id="book" onClick="handleSideNav('book')">Book</li>
+                <li id="bookings" onClick="handleSideNav('bookings')">Bookings</li>
               </ul>
         </div>  
     <div class="slot-body">
     
-    
-    <div class="slot-selection">
-      <label for="slot" style="margin-right: 15px">Book your slot :</label>
+      <div class="slot-selection" id="slot-date-selection">
+      <!-- <h3>Book Your Slot!</h3> -->
+      <label for="slot" style="margin-right: 15px">Pick type :</label>
 
       <select onchange="pickUporDrop()" name="slot-booking" id="slot-booking">
         <option value="" selected hidden>Choose here</option>
@@ -146,7 +146,8 @@
         </div>
       </div>
     </div>
-    <div>
+
+    <div id="employee-bookings-table">
     <?php
 // Assuming $empId holds the specific employeeId value
 $empId = $_SESSION['employeeId'];

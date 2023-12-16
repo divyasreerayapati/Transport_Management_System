@@ -59,6 +59,7 @@ if ($existingBookingsCount > 0) {
     $response->message = 'Cannot book a new slot. You have existing booking which are incomplete.';
     header('Content-Type: application/json; charset=utf-8');
     echo json_encode($response);
+    $conn->close();
     exit();
 }
 

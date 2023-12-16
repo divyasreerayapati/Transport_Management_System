@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows > 0) {
             echo "<h1>Login Successful</h1>";
             $_SESSION['adminId'] = $adminId;
-            header("refresh:2;url= ../admin.html");
+            header("refresh:0;url= ../admin.html");
             // Perform additional actions if needed (e.g., session management, redirect)
         } else {
             echo "<h1>Login Failed. Invalid credentials</h1>";

@@ -36,3 +36,21 @@ function handleInputChange() {
     "time-slot-selected"
   ).value = `${selectedvalue}-${buttonText}`;
 }
+
+function handleSideNav(type) {
+  console.log(type);
+  if (type === "book") {
+    document.getElementById("employee-bookings-table").style.display = "none";
+    document.getElementById("slot-date-selection").style.display = "flex";
+    document.getElementById("slots-book").style.display = "none";
+    document.getElementById("book").style.backgroundColor = "#737373";
+    document.getElementById("bookings").style.backgroundColor = "#d6d6d6";
+  } else {
+    document.getElementById("slot-date-selection").style.display = "none";
+    document.getElementById("slots-book").style.display = "none";
+    document.getElementById("slot-booking").value = "";
+    document.getElementById("employee-bookings-table").style.display = "block";
+    document.getElementById("bookings").style.backgroundColor = "#737373";
+    document.getElementById("book").style.backgroundColor = "#d6d6d6";
+  }
+}

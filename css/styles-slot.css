@@ -136,6 +136,16 @@ select {
   width: 90%;
 }
 
+.slot-body h3 {
+  text-align: center;
+  margin: 1rem auto;
+  color: transparent;
+  background: linear-gradient(to bottom, #e600ffbd, #00aeffac);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-decoration: underline black 1.2px;
+}
+
 .side-nav ul {
   text-align: center;
   line-height: 3rem;
@@ -143,6 +153,19 @@ select {
 
 .side-nav ul li {
   border-bottom: 2px solid aliceblue;
+}
+
+.side-nav ul li:hover {
+  background-color: #737373;
+  cursor: pointer;
+}
+
+.side-nav ul li:first-child {
+  background-color: #737373;
+}
+
+#employee-bookings-table {
+  display: none;
 }
 
 table {
