@@ -8,7 +8,34 @@
     <link rel="stylesheet" href="css/styles-slot.css" />
     <script src="scripts/script.js"></script>
     <script src="scripts/slot_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
+<!-- Your script comes after including jQuery -->
+<script>
+  function handleSlotSubmit() {
+    const dateSelected = document.getElementById("date-selected").value;
+    const timeSelected = document.getElementById("time-slot-selected").value;
+    $.ajax({
+      type: "POST",
+      url: "./php/book_slot.php",
+      data: { dateSelected, timeSelected },
+      dataType: 'json',
+      success: function (response) {
+        if (response.status === 'success') {
+            alert(response.message);
+        } else {
+            // Error during slot booking, handle error case
+            alert(response.message);
+        }
+      },
+      error: function(xhr, status, error) {
+        // Handle AJAX error
+        alert("Something went wrong!")
+        console.error(xhr.responseText);
+    }
+    });
+  }
+</script>
     <style>
        table {
         border-spacing: 3px; /* Add spacing between cells */
@@ -62,8 +89,8 @@
               </ul>
         </div>  
     <div class="slot-body">
-      
-
+    
+    
     <div class="slot-selection">
       <label for="slot" style="margin-right: 15px">Book your slot :</label>
 
@@ -100,7 +127,7 @@
         </div>
 
         <div class="view-details">
-          <form class="form-group" action="php/book_slot.php" method="post">
+          <form class="form-group">
             <table class="tableData" >
               <tr>
                 <td> <label for="dateSelected">Date:</label></td>
@@ -113,12 +140,66 @@
             </table>
 
             <div>
-              <button type="submit" class="bookking-btn">Book</button>
+              <button type="button" onClick="handleSlotSubmit()" class="bookking-btn">Book</button>
             </div>
           </form>
         </div>
       </div>
     </div>
+    <div>
+    <?php
+// Assuming $empId holds the specific employeeId value
+$empId = $_SESSION['employeeId'];
+
+// Create a database connection
+$conn = new mysqli('localhost', 'root', '', 'transportdata');
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Prepare and execute the SQL query
+$query = $conn->prepare("SELECT  dateSlot, timeSlot, status FROM slot_booking WHERE employeeId = ?");
+$query->bind_param("s", $empId);
+$query->execute();
+$query->bind_result($dateSlot, $timeSlot, $status);
+
+// Output table structure
+echo '<table class="booking-table">
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Date</th>
+            <th>Time-Slot</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>';
+
+// Counter for serial number
+$serialNumber = 1;
+
+// Fetch and display results
+while ($query->fetch()) {
+    echo '<tr>
+            <td>' . $serialNumber++ . '</td>
+            <td>' . $dateSlot . '</td>
+            <td>' . $timeSlot . '</td>
+            <td>' . $status . '</td>
+          </tr>';
+}
+
+// Close the table structure
+echo '</tbody></table>';
+
+// Close the database connection
+$query->close();
+$conn->close();
+?>
+
+    </div>
+
           </div>
           </div>
   </body>

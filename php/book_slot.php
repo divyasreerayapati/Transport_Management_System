@@ -1,5 +1,8 @@
 <?php
-var_dump($_POST);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// var_dump($_POST);
 
 session_start();
 
@@ -42,23 +45,46 @@ if ($employeeQuery->fetch()) {
     exit();
 }
 
+
+$existingBookingsQuery = $conn->prepare("SELECT COUNT(*) FROM slot_booking WHERE employeeId = ? AND status = 0");
+$existingBookingsQuery->bind_param("s", $userDetails['employeeId']);
+$existingBookingsQuery->execute();
+$existingBookingsQuery->bind_result($existingBookingsCount);
+$existingBookingsQuery->fetch();
+$existingBookingsQuery->close();
+
+if ($existingBookingsCount > 0) {
+    $response = new stdClass();
+    $response->status = 'bad_request';
+    $response->message = 'Cannot book a new slot. You have existing booking which are incomplete.';
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($response);
+    exit();
+}
+
 // Prepare and execute the SQL query to insert data into the slot_booking table
 $stmt = $conn->prepare("INSERT INTO slot_booking (employeeId, employeeName, orgName, empaddress, timeSlot, dateSlot) VALUES (?, ?, ?, ?, ?, ?)");
 $stmt->bind_param("ssssss", $userDetails['employeeId'], $userDetails['employeeName'], $organizationName, $employeeAddress, $timeSelected, $dateSelected);
 
+$response = new stdClass(); // Initialize an object to store the response data
+
 if ($stmt->execute()) {
-    // Slot booked successfully, set a session variable for the message
-    $_SESSION['slotBookedMessage'] = "Slot booked successfully!";
+    // Slot booked successfully
+    $response->status = 'success';
+    $response->message = 'Slot booked successfully!';
 } else {
-    // Slot booking failed, set a session variable for the error message
-    $_SESSION['slotBookedMessage'] = "Error: " . $stmt->error;
+    // Slot booking failed
+    $response->status = 'error';
+    $response->message = 'Error:' .$stmt->error;
 }
 
 $stmt->close();
 $conn->close();
 
-// Redirect back to slotbooking.php
-header("Location: ../slot_Booking.php");
+// Send the JSON response
+header('Content-Type: application/json; charset=utf-8');
+header('Content-Length: ' . strlen(json_encode($response)));
+echo json_encode($response);
 exit();
-?>
- 
+
+exit();

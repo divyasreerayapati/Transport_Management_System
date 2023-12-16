@@ -144,3 +144,21 @@ select {
 .side-nav ul li {
   border-bottom: 2px solid aliceblue;
 }
+
+table {
+  overflow-y: scroll;
+}
+
+.booking-table {
+  width: 98%;
+  border-collapse: collapse;
+  margin: auto auto;
+  margin-top: 10px;
+}
+
+.booking-table th,
+.booking-table td {
+  border: 2px solid black;
+  padding: 10px;
+  text-align: center;
+}
