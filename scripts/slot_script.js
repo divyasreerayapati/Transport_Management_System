@@ -38,7 +38,6 @@ function handleInputChange() {
 }
 
 function handleSideNav(type) {
-  console.log(type);
   if (type === "book") {
     document.getElementById("employee-bookings-table").style.display = "none";
     document.getElementById("slot-date-selection").style.display = "flex";

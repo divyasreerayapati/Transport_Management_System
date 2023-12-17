@@ -28,4 +28,14 @@
 h2 {
   margin-bottom: 20px;
   margin-top: 20px;
+  text-align: center;
+}
+
+.admin-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+#completed {
+  display: none;
 }
