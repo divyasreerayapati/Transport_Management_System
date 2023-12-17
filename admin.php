@@ -7,11 +7,36 @@
     <link rel="stylesheet" href="css/styles-slot.css" />
     <link rel="stylesheet" href="css/admin_style.css" />
     <script src="./scripts/admin_script.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link
       rel="shortcut icon"
       href="assets/shortcut-car.png"
       type="image/x-icon"
     />
+
+    <script>
+      function handleComplete(employeeId){
+        $.ajax({
+      type: "POST",
+      url: "./php/adminUpdate.php",
+      data: { 'employeeId':`${employeeId}` },
+      dataType: 'json',
+      success: function (response) {
+        if (response.status === 'success') {
+            alert(response.message);
+        } else {
+            // Error during slot booking, handle error case
+            alert(response.message);
+        }
+      },
+      error: function(xhr, status, error) {
+        // Handle AJAX error
+        alert("Something went wrong!")
+        console.error(xhr.responseText);
+    }
+    });
+      }
+      </script>
     <title>admin</title>
   </head>
   <body>
@@ -98,7 +123,7 @@
                     <td>' . $dateSlot . '</td>
                     <td>' . $timeSlot . '</td>
                     <td>' . $empaddress . '</td>
-                    <td><button class="done-button">Complete</button>
+                    <td><button onClick="handleComplete(\'' . $employeeId . '\')" class="done-button">Complete</button>
                   </tr>';
         }
 
