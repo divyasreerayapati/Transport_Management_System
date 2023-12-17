@@ -92,7 +92,7 @@
     
       <div class="slot-selection" id="slot-date-selection">
       <!-- <h3>Book Your Slot!</h3> -->
-      <label for="slot" style="margin-right: 15px">Pick type :</label>
+      <label for="slot" style="margin-right: 15px">PickUp type :</label>
 
       <select onchange="pickUporDrop()" name="slot-booking" id="slot-booking">
         <option value="" selected hidden>Choose here</option>
