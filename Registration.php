@@ -22,7 +22,7 @@ exit();
     <title>Transport Management System</title>
     <script src="scripts/script.js"></script>
     <script src="scripts/form_validation.js"></script>
-    
+     
     
   </head>
   <body id="registration">
