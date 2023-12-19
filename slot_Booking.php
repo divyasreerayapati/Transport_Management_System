@@ -38,10 +38,10 @@
 </script>
     <style>
        table {
-        border-spacing: 3px; /* Add spacing between cells */
+        border-spacing: 3px; /* Adding spacing between cells */
         }
       td {
-        padding: 3px; /* Add padding inside cells */
+        padding: 3px; /* Adding padding inside cells */
         }
        input[disabled] {
         outline: none; 
