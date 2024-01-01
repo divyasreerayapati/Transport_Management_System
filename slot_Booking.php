@@ -149,7 +149,7 @@
 
     <div id="employee-bookings-table">
     <?php
-// Assuming $empId holds the specific employeeId value
+// Assuming $empId holds the specific employeeId value in slot_booking table
 $empId = $_SESSION['employeeId'];
 
 // Create a database connection
